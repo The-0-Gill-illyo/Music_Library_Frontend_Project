@@ -1,0 +1,30 @@
+.border-box {
+    border: 1px;
+    border-style: solid;
+    border-color: orangered;
+    margin: 1px;
+    padding: 10px;
+}
+
+.app {
+    margin: 50px;
+}
+
+.search {
+    padding: 10px;
+    font-size: 20px;
+}
+
+.list {
+    padding: 0;
+    list-style: none;
+    text-align: center;
+}
+
+.listItem {
+    margin-bottom: 10px;
+    margin-right: 1900px;
+    font-size: 25px;
+    color: green;
+    font-weight: 300;
+}
