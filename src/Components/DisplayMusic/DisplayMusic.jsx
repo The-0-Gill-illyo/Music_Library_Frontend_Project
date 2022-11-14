@@ -1,4 +1,3 @@
-import Search from "../../Search/Search";
 import "./DisplayMusic.css"
 const DisplayMusic = (props) => {
     return (
@@ -29,7 +28,6 @@ const DisplayMusic = (props) => {
             })}
             </tbody>
         </table>
-        <Search/>
         </div>
       );
 }
