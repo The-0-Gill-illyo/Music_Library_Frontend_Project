@@ -1,9 +1,9 @@
-
+import "./DisplayMusic.css"
 const DisplayMusic = (props) => {
     return (
         <table>
             <thead>
-            <tr>
+            <tr className="listItem">
                 <th>Title</th>
                 <th>Artist</th>
                 <th>Album</th>
@@ -14,7 +14,7 @@ const DisplayMusic = (props) => {
             <tbody>
             {props.parentSongs.map((song, index) => {
                 return (
-                    <tr key={index}>
+                    <tr className="text" key={index}>
                         <td>{song.title}</td>
                         <td>{song.artist}</td>
                         <td>{song.album}</td>

@@ -4,6 +4,8 @@ import DisplayMusic from './Components/DisplayMusic/DisplayMusic';
 import './app.css';
 import DislikeButton from './Components/Dislike Button/DislikeButton';
 import LikeButton from './Components/LikeButton/LikeButton';
+import Search from './Search/Search';
+import SearchBar from './Search/SearchBar';
 
 
 function App() {
@@ -26,24 +28,12 @@ function App() {
             <div className='row'>
                 <div className='border-box'>
                   <div className="wrap">
-                    <div className="search">
-                        <input type="text" className="searchTerm" placeholder="Music Library Search"></input>
-                        <button type='submit' className="searchButton">
-                        <i className="fa-fa search">search</i>
-                        </button>
-                    </div>
                   </div>
-                <ul className='list'>
-                    <li className='listItem'>Title</li>
-                    <li className='listItem'>Artist</li>
-                    <li className='listItem'>Album</li>
-                    <li className='listItem'>Release Date</li>
-                    <li className='listItem'>Genre</li>
-                </ul>
                     <div className='border-box'>
                         <DisplayMusic parentSongs={songs} />
                         <DislikeButton thrumbsDown={DislikeButton} /> 
                         <LikeButton thrumbsUp={LikeButton} /> 
+                        <Search/>
                     </div>
                 </div>
             </div>
