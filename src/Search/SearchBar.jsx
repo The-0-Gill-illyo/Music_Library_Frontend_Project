@@ -10,7 +10,7 @@ const SearchBar = (props) => {
 
     function handleSubmit(event){
         event.preventDefault();
-        props.searchBar(searchTerm)
+        props.search(searchTerm)
     }
 
     return (

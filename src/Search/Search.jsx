@@ -4,38 +4,51 @@ import DisplayMusic from '../Components/DisplayMusic/DisplayMusic';
 import SearchBar from './SearchBar';
 
 
-const Search = (props) => {
+const Search = () => {
     const [searchInput, setSearchInput] = useState("");
     const [music, setMusic] = useState([]);
+    const [searchList, setSearchList] = useState([]);
     
     useEffect(() => {
-        fetchResults()
-    }, [searchInput])
+        
+    }, [])
 
-    function passedSearchTerm(searchTerm){
-        setSearchInput(searchTerm)
+    async function handleSubmit(event){
+        event.preventDefault()
+
+        let newSearch;
+        console.log(searchInput)
+
+        try{
+            let response = await axios.get("http://127.0.0.1:8000/music/")
+            setMusic(response.data)
+            let filteredSearch = searchList.filter(list =>list.name.includes(searchInput));
+            setSearchList(filteredSearch)
+            console.log("Artist:", filteredSearch)
+        } catch(error){
+            console.log(error.response.data)
+        }
     }
-
-    const fetchResults = async() =>{
-        let respose = axios.filter("http://127.0.0.1:8000/music/")
-        setMusic(respose.data)
-    //     let filteredSearch = music.;
-    //     setMusic(filteredSearch)
-         console.log("Music", music)
-     }
-     
     return ( 
         <div>
-            <SearchBar music={passedSearchTerm}/>
-            {music.map((song, index) =>{
+            {music.map((artist, index) =>{
                 return(
                     <div key={index}>
-                        <h3>{song.artist}</h3>
+                        <h3>{artist.name}</h3>
                     </div>
                 )
             })}
+          <form onSubmit={handleSubmit}>             
+            <input type="text"  className="searchTerm" onChange={(event)=>setSearchInput(event.target.value)} placeholder="SEARCH"></input>
+            <button type='submit' className="searchButton">
+            <i className="fa-fa search">search</i>
+            </button>
+          </form>
+          <div>
+          </div>
         </div>
-     );
-}
+);
+    }
+
  
 export default Search;

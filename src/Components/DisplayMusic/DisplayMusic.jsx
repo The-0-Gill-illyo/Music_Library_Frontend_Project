@@ -1,6 +1,8 @@
+import Search from "../../Search/Search";
 import "./DisplayMusic.css"
 const DisplayMusic = (props) => {
     return (
+        <div>
         <table>
             <thead>
             <tr className="listItem">
@@ -27,6 +29,8 @@ const DisplayMusic = (props) => {
             })}
             </tbody>
         </table>
+        <Search/>
+        </div>
       );
 }
  

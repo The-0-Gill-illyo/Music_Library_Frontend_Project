@@ -6,6 +6,7 @@ import DislikeButton from './Components/Dislike Button/DislikeButton';
 import LikeButton from './Components/LikeButton/LikeButton';
 import Search from './Search/Search';
 import SearchBar from './Search/SearchBar';
+import DisplaySearch from './Search/DisplaySearch';
 
 
 function App() {
@@ -33,7 +34,6 @@ function App() {
                         <DisplayMusic parentSongs={songs} />
                         <DislikeButton thrumbsDown={DislikeButton} /> 
                         <LikeButton thrumbsUp={LikeButton} /> 
-                        <Search/>
                     </div>
                 </div>
             </div>
